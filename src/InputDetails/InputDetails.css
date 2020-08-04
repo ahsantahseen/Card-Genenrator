@@ -1,12 +1,15 @@
 .inputpanel {
   height: fit-content;
   width: fit-content;
+  padding: 5px;
   margin: auto;
-  background-color: #eee;
-  color: black;
-  border: 2px solid red;
-  box-shadow: 2px 2px 2px 2px black;
+  margin-top: 8px;
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 .inputbox {
   border: 1px solid black;
+}
+.button {
+  margin-top: 10px;
 }

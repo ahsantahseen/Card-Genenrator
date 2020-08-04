@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import InputDetails from "./InputDetails/InputDetails";
 import "./App.css";
 import CardComponent from "./CardComponent/CardComponent";
 
@@ -13,7 +13,7 @@ class App extends Component {
     this.setState({
       Person: [
         ...this.state.Person,
-        { name: this.state.name, email: this.state.email },
+        { name: this.state.name, age: this.state.age },
       ],
     });
   };
@@ -24,29 +24,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="inputpanel">
-          <h2>Enter Details</h2>
-          <input
-            name="name"
-            onChange={(event) => this.handlerChange(event)}
-            className="inputbox"
-            placeholder="enter name"
-          ></input>
-          <input
-            name="email"
-            onChange={(event) => this.handlerChange(event)}
-            className="inputbox"
-            placeholder="enter email"
-          ></input>
-        </div>
-        <button onClick={this.handlerFunc}>Press it</button>
+        <InputDetails
+          clicked={this.handlerFunc}
+          changed={(event) => this.handlerChange(event)}
+        ></InputDetails>
+
         {this.state.Person.map((elem) => {
           return (
             <center>
-              <CardComponent
-                name={elem.name}
-                email={elem.email}
-              ></CardComponent>
+              <CardComponent name={elem.name} age={elem.age}></CardComponent>
             </center>
           );
         })}

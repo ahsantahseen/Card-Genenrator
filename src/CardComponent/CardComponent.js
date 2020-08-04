@@ -11,10 +11,14 @@ const CardComponent = (props) => {
           className="pic"
         />
         <div class="container">
-          <h4>
-            <b>{props.name}</b>
-          </h4>
-          <p>{props.email}</p>
+          <p>
+            <b>NAME: </b>
+            {props.name}
+          </p>
+          <p>
+            <b>AGE: </b>
+            {props.age}
+          </p>
         </div>
       </div>
     </React.Fragment>
