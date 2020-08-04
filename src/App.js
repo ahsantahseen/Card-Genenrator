@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
+
 import "./App.css";
-import InputComp from "./InputDetails/InputDetails";
 import CardComponent from "./CardComponent/CardComponent";
-import card from "./cssstyle.css";
 
 class App extends Component {
   state = {
@@ -24,13 +22,6 @@ class App extends Component {
     this.setState({ [event.target.name]: event.target.value });
 
   render() {
-    const card = {
-      width: "fit-content",
-      margin: "auto",
-      border: "2px solid blue",
-      backgroundColor: "#eee",
-    };
-
     return (
       <div className="App">
         <div className="inputpanel">
@@ -51,11 +42,12 @@ class App extends Component {
         <button onClick={this.handlerFunc}>Press it</button>
         {this.state.Person.map((elem) => {
           return (
-            <CardComponent
-              style={card}
-              name={elem.name}
-              email={elem.email}
-            ></CardComponent>
+            <center>
+              <CardComponent
+                name={elem.name}
+                email={elem.email}
+              ></CardComponent>
+            </center>
           );
         })}
       </div>
