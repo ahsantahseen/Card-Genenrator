@@ -31,13 +31,21 @@ class App extends Component {
           changed={(event) => this.handlerChange(event)}
           val={this.state.val}
         ></InputDetails>
-        {this.state.Person.map((elem) => {
-          return (
-            <center>
-              <CardComponent name={elem.name} age={elem.age}></CardComponent>
-            </center>
-          );
-        })}
+        <div className="card-container">
+          <div className="cards">
+            {this.state.Person.map((elem) => {
+              return (
+                <center>
+                  <CardComponent
+                    key={elem}
+                    name={elem.name}
+                    age={elem.age}
+                  ></CardComponent>
+                </center>
+              );
+            })}
+          </div>
+        </div>
       </div>
     );
   }
