@@ -20,6 +20,11 @@ const CardComponent = (props) => {
             {props.age}
           </p>
         </div>
+        <div className="options">
+          <div className="print">P</div>
+
+          <div className="save">S</div>
+        </div>
       </div>
     </React.Fragment>
   );

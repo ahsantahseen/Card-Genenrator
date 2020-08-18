@@ -8,7 +8,6 @@ class App extends Component {
     Person: [],
     PersonChanger: false,
   };
-
   handlerFunc = () => {
     this.setState({
       Person: [
@@ -16,10 +15,13 @@ class App extends Component {
         { name: this.state.name, age: this.state.age },
       ],
     });
+    this.setState({ val: "" });
   };
 
-  handlerChange = (event) =>
+  handlerChange = (event) => {
+    event.preventDefault();
     this.setState({ [event.target.name]: event.target.value });
+  };
 
   render() {
     return (
@@ -27,8 +29,8 @@ class App extends Component {
         <InputDetails
           clicked={this.handlerFunc}
           changed={(event) => this.handlerChange(event)}
+          val={this.state.val}
         ></InputDetails>
-
         {this.state.Person.map((elem) => {
           return (
             <center>

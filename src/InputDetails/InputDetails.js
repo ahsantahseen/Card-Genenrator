@@ -10,12 +10,14 @@ const InputComp = (props) => {
           className="inputbox"
           placeholder="enter name"
           onChange={props.changed}
+          value={props.val}
         ></input>
         <input
           name="age"
           className="inputbox"
           placeholder="enter age"
           onChange={props.changed}
+          value={props.val}
         ></input>
       </div>
 
