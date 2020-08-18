@@ -19,7 +19,8 @@
 .print {
   display: flex;
   cursor: pointer;
-  background-color: red;
+  background-image: url("../assets/Printer.png");
+  background-repeat: no-repeat;
   height: 50px;
   width: 50px;
   justify-content: center;
@@ -27,8 +28,8 @@
 }
 
 .save {
-  background-color: green;
-
+  background-image: url("../assets/iconfinder_Upload_132485.png");
+  background-repeat: no-repeat;
   cursor: pointer;
   height: 50px;
   width: 50px;

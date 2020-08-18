@@ -7,6 +7,7 @@ class App extends Component {
   state = {
     Person: [],
     PersonChanger: false,
+    input: null,
   };
   handlerFunc = () => {
     this.setState({
@@ -15,11 +16,10 @@ class App extends Component {
         { name: this.state.name, age: this.state.age },
       ],
     });
-    this.setState({ val: "" });
   };
 
   handlerChange = (event) => {
-    event.preventDefault();
+    console.log("ON CAHNGE");
     this.setState({ [event.target.name]: event.target.value });
   };
 
@@ -27,9 +27,9 @@ class App extends Component {
     return (
       <div className="App">
         <InputDetails
-          clicked={this.handlerFunc}
+          clicked={this.handlerFunc.bind(this)}
           changed={(event) => this.handlerChange(event)}
-          val={this.state.val}
+          val={null}
         ></InputDetails>
         <div className="card-container">
           <div className="cards">

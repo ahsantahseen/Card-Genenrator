@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./CardComponent.css";
 
 const CardComponent = (props) => {
@@ -21,9 +21,9 @@ const CardComponent = (props) => {
           </p>
         </div>
         <div className="options">
-          <div className="print">P</div>
+          <div className="print"></div>
 
-          <div className="save">S</div>
+          <div className="save"></div>
         </div>
       </div>
     </React.Fragment>
