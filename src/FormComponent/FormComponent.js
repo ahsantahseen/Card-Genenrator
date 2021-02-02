@@ -19,7 +19,6 @@ const FormComponent = () => {
           event.stopPropagation();
         }
     
-        setValidated(true);
       };
     return (
         <>
@@ -59,7 +58,7 @@ const FormComponent = () => {
                 <Form.File id="formAddress" label="Picture" type="image" required></Form.File>
                 <Form.Text>Please upload a picture for card (limit 3 mb)</Form.Text>
             </Form.Group>
-            <Button disabled={Validated} type="submit" className="w-100 text-center mt-2">Create Card</Button> 
+            <Button type="submit" className="w-100 text-center mt-2">Create Card</Button> 
         </Form>
         </>
     )
