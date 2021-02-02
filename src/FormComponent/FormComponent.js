@@ -1,5 +1,6 @@
+
 import React,{useState} from 'react'
-import {Form,Button} from 'react-bootstrap'
+import {Form,Button,Alert} from 'react-bootstrap'
 import IntlTelInput from 'react-bootstrap-intl-tel-input'
 
 const FormComponent = () => {
@@ -22,7 +23,7 @@ const FormComponent = () => {
       };
     return (
         <>
-        <Form noValidate validated={Validated} onSubmit={handleSubmit}>
+        <Form  validated={Validated} onSubmit={handleSubmit}>
             <Form.Group id="formName">
                 <Form.Label>Name</Form.Label>
                 <Form.Control placeholder="Please enter full name here" type="text" required maxLength={50} minLength={5}></Form.Control>
@@ -36,16 +37,14 @@ const FormComponent = () => {
             </Form.Group>
             
             <Form.Label>Contact Number</Form.Label>
-            <IntlTelInput
+            <IntlTelInput required
             preferredCountries={['PK']}
   defaultCountry={'PK'}
   onChange={(data)=>onChangeHandler(data)}
-  maxLength={11}
-  minLengthMessage="Number too short"
-  
-  maxLengthMessage="Number too long"
+ 
   
   ></IntlTelInput>
+            {number.valid?<p style={{color:"green"}}>{number.friendlyMessage}</p>:<p style={{color:"red"}}>{number.friendlyMessage}</p>}
             
             <Form.Group id="formDepartment">
                 <Form.Label>Department</Form.Label>
@@ -60,7 +59,7 @@ const FormComponent = () => {
                 <Form.File id="formAddress" label="Picture" type="image" required></Form.File>
                 <Form.Text>Please upload a picture for card (limit 3 mb)</Form.Text>
             </Form.Group>
-            <Button disabled={Validated} type="submit" className="w-100 text-center mt-2">Log In</Button> 
+            <Button disabled={Validated} type="submit" className="w-100 text-center mt-2">Create Card</Button> 
         </Form>
         </>
     )
