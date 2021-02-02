@@ -1,54 +1,25 @@
 import React, { Component } from "react";
-import InputDetails from "./InputDetails/InputDetails";
 import "./App.css";
-import CardComponent from "./CardComponent/CardComponent";
+import uuid from "react-uuid";
+import {Container,Row,Col} from 'react-bootstrap';
+import CardComponent from "./CardComponent/CardComponent"
 
-class App extends Component {
-  state = {
-    Person: [],
-    PersonChanger: false,
-    input: null,
-  };
-  handlerFunc = () => {
-    this.setState({
-      Person: [
-        ...this.state.Person,
-        { name: this.state.name, age: this.state.age },
-      ],
-    });
-  };
 
-  handlerChange = (event) => {
-    console.log("ON CAHNGE");
-    this.setState({ [event.target.name]: event.target.value });
-  };
 
-  render() {
-    return (
-      <div className="App">
-        <InputDetails
-          clicked={this.handlerFunc.bind(this)}
-          changed={(event) => this.handlerChange(event)}
-          val={null}
-        ></InputDetails>
-        <div className="card-container">
-          <div className="cards">
-            {this.state.Person.map((elem) => {
-              return (
-                <center>
-                  <CardComponent
-                    key={elem}
-                    name={elem.name}
-                    age={elem.age}
-                  ></CardComponent>
-                </center>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-    );
-  }
+const App = () => {
+  return (
+    <div>
+      <Container fluid>
+        <Row style={{background:"#2c3e50",padding:"5px"}}><Col style={{border:"3px solid white"}}><h1>Header</h1></Col></Row>
+        <Row class="h-100" style={{background:"#7f8c8d",padding:"5px",height:"100vh"}}><Col md="3" style={{border:"3px solid white"}}>
+          <h3>Form</h3>
+          </Col>
+          <Col style={{border:"3px solid white"}}><h3>Cards</h3><p>Minim officia qui ea id eu consequat consectetur. Amet voluptate consequat ullamco est ipsum incididunt adipisicing magna ea cupidatat. Excepteur ullamco exercitation dolore labore.</p></Col>
+          </Row>
+      </Container>
+    </div>
+  )
 }
 
-export default App;
+export default App
+

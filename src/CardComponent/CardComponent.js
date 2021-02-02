@@ -1,32 +1,18 @@
-import React, { useEffect, useState } from "react";
-import "./CardComponent.css";
+import React from 'react'
+import {Card,Button} from 'react-bootstrap'
 
-const CardComponent = (props) => {
+const CardComponent = () => {
   return (
-    <React.Fragment>
-      <div className="card">
-        <img
-          src="https://www.w3schools.com/howto/img_avatar.png"
-          alt="Avatar"
-          className="pic"
-        />
-        <div class="container">
-          <p>
-            <b>NAME: </b>
-            {props.name}
-          </p>
-          <p>
-            <b>AGE: </b>
-            {props.age}
-          </p>
-        </div>
-        <div className="options">
-          <div className="print"></div>
+    <>
+      <Card style={{maxWidth:"400px"}} className="d-flex justify-content-center text-center">
+        <Card.Body>
+          <Card.Title>Student Card</Card.Title>
+          <Card.Text>Deserunt proident ex aliquip sunt esse cillum magna consectetur.</Card.Text>
+          <Button variant="primary">Go somewhere</Button>
+        </Card.Body>
+      </Card>
+    </>
+  )
+}
 
-          <div className="save"></div>
-        </div>
-      </div>
-    </React.Fragment>
-  );
-};
-export default CardComponent;
+export default CardComponent
