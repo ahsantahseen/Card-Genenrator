@@ -16,6 +16,7 @@ const FormComponent = () => {
     const [age, setage] = useState()
     const [department, setdepartment] = useState('')
     const [address,setaddress]=useState('')
+    const [phoneInputReset, setphoneInputReset] = useState(false)
 
 
     const setNumber=(data)=>{
@@ -49,13 +50,15 @@ const FormComponent = () => {
                 name:name,age:age,department:department,address:address,number:number
             },
         ]);
-      };    
+    form.reset();
+    setphoneInputReset(true)
+          };    
     return (
         <>
         <Form  validated={Validated} onSubmit={handleSubmit}>
             <Form.Group id="formName">
                 <Form.Label>Name</Form.Label>
-                <Form.Control placeholder="Please enter full name here" value={name} onChange={setName} type="text" required maxLength={50} minLength={5}></Form.Control>
+                <Form.Control placeholder="Please enter full name here" value={name} onChange={setName}type="text" required maxLength={50} minLength={5}></Form.Control>
                 
                 
             </Form.Group>
@@ -70,6 +73,7 @@ const FormComponent = () => {
             preferredCountries={['PK']}
   defaultCountry={'PK'}
   onChange={(data)=>setNumber(data)}
+  reset={phoneInputReset}
  
   
   ></IntlTelInput>
