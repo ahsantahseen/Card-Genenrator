@@ -49,16 +49,15 @@ const FormComponent = () => {
                 <Form.Label>Department</Form.Label>
                 <Form.Control placeholder="Please enter department here" type="text" required></Form.Control>
             </Form.Group>
-            
             <Form.Group id="formAddress">
-                <Form.Label>Home Address</Form.Label>
-                <Form.Control placeholder="Please enter home address here" type="text" required></Form.Control>
+                <Form.Label>Address</Form.Label>
+                <Form.Control placeholder="Please enter address here" type="text" required></Form.Control>
             </Form.Group>
             <Form.Group>
                 <Form.File id="formAddress" label="Picture" type="image" required></Form.File>
                 <Form.Text>Please upload a picture for card (limit 3 mb)</Form.Text>
             </Form.Group>
-            <Button type="submit" className="w-100 text-center mt-2">Create Card</Button> 
+            <Button type="submit" className="w-100 text-center mt-2 mb-3">Create Card</Button> 
         </Form>
         </>
     )
