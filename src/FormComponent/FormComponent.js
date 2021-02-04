@@ -1,5 +1,5 @@
 
-import React,{useState,useContext} from 'react'
+import React,{useState,useContext,useRef} from 'react'
 import {Form,Button,Alert} from 'react-bootstrap'
 import IntlTelInput from 'react-bootstrap-intl-tel-input'
 import {DataContext} from "../Contexts/DataContext"
@@ -8,7 +8,8 @@ import {DataContext} from "../Contexts/DataContext"
 
 const FormComponent = () => {
     const [Data,setData]=useContext(DataContext);
-
+    const FormRef=useRef(null);
+     
     const [Validated, setValidated] = useState(true)
     
     const [number, setnumber] = useState([])
@@ -18,7 +19,7 @@ const FormComponent = () => {
     const [address,setaddress]=useState('')
     const [phoneInputReset, setphoneInputReset] = useState(false)
 
-
+   
     const setNumber=(data)=>{
         setnumber(data)
         console.log(number)
@@ -35,7 +36,11 @@ const FormComponent = () => {
     const setAddress=(e)=>{
         setaddress(e.target.value)
     }
-
+    const HandleReset=()=>{
+        FormRef.current.reset();
+        setValidated(false);
+    
+    }
     const handleSubmit = (event) => {
         const form = event.currentTarget;
         event.preventDefault();
@@ -50,18 +55,18 @@ const FormComponent = () => {
                 name:name,age:age,department:department,address:address,number:number
             },
         ]);
-    form.reset();
     setphoneInputReset(true)
+    HandleReset();
           };    
     return (
         <>
-        <Form  validated={Validated} onSubmit={handleSubmit}>
+        <Form  ref={FormRef} validated={Validated} onSubmit={handleSubmit}>
             <Form.Group id="formName">
                 <Form.Label>Name</Form.Label>
-                <Form.Control placeholder="Please enter full name here" value={name} onChange={setName}type="text" required maxLength={50} minLength={5}></Form.Control>
+                <Form.Control placeholder="Please enter full name here" onChange={setName}type="text" required maxLength={50} minLength={5}></Form.Control>
                 
                 
-            </Form.Group>
+            </Form.Group>   
             
             <Form.Group id="formAge">
                 <Form.Label>Age</Form.Label>
@@ -71,9 +76,10 @@ const FormComponent = () => {
             <Form.Label>Contact Number</Form.Label>
             <IntlTelInput required
             preferredCountries={['PK']}
-  defaultCountry={'PK'}
+  defaultCountry={'US'}
   onChange={(data)=>setNumber(data)}
   reset={phoneInputReset}
+  defaultValue={'+0'}
  
   
   ></IntlTelInput>
