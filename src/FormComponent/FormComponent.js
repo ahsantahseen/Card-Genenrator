@@ -1,6 +1,6 @@
 
 import React,{useState,useContext,useRef} from 'react'
-import {Form,Button,Alert} from 'react-bootstrap'
+import {Form,Button,Alert,Container} from 'react-bootstrap'
 import IntlTelInput from 'react-bootstrap-intl-tel-input'
 import {DataContext} from "../Contexts/DataContext"
 
@@ -60,6 +60,7 @@ const FormComponent = () => {
           };    
     return (
         <>
+        <Container style={{maxWidth:"300px"}}>
         <Form  ref={FormRef} validated={Validated} onSubmit={handleSubmit}>
             <Form.Group id="formName">
                 <Form.Label>Name</Form.Label>
@@ -76,10 +77,9 @@ const FormComponent = () => {
             <Form.Label>Contact Number</Form.Label>
             <IntlTelInput required
             preferredCountries={['PK']}
-  defaultCountry={'US'}
+  defaultCountry={'PK'}
   onChange={(data)=>setNumber(data)}
   reset={phoneInputReset}
-  defaultValue={'+0'}
  
   
   ></IntlTelInput>
@@ -93,12 +93,9 @@ const FormComponent = () => {
                 <Form.Label>Address</Form.Label>
                 <Form.Control placeholder="Please enter address here" onChange={setAddress} maxLength={120} minLength={15} type="text" required></Form.Control>
             </Form.Group>
-            <Form.Group>
-                <Form.File id="formAddress" label="Picture" type="image" required></Form.File>
-                <Form.Text>Please upload a picture for card (limit 3 mb)</Form.Text>
-            </Form.Group>
-            <Button type="submit" className="w-100 text-center mb-2">Create Card</Button> 
+            <Button type="submit" className="w-100 text-center mb-3">Create Card</Button> 
         </Form>
+        </Container>
         </>
     )
 }

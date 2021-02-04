@@ -1,3 +1,10 @@
 .App {
   text-align: center;
 }
+.HeightFix {
+}
+@media (min-width: 768px) {
+  .HeightFix {
+    height: 100vh;
+  }
+}
