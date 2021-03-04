@@ -1,4 +1,4 @@
-import React,{useContext} from 'react'
+import React,{useContext,useEffect} from 'react'
 import uuid from 'react-uuid'
 import CardComponent from "./CardComponent"
 import {DataContext} from "../Contexts/DataContext"
@@ -7,6 +7,10 @@ import "./Cards.css"
 
 const CardLists = () => {
 const [Data,setData]=useContext(DataContext);
+useEffect(() => {
+    console.log(Data)
+}, [])
+
     return (
         <div className="card-container">
         <div className="cards">

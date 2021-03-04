@@ -50,17 +50,17 @@ const FormComponent = () => {
 
         }
         setValidated(true)
-        setData((prevData)=>[
-            ...prevData,{
-                name:name,age:age,department:department,address:address,number:number
-            },
+        
+        setData((PrevData)=>[...PrevData,{
+                name:name,age:age,department:department,address:address,number:number}
         ]);
     setphoneInputReset(true)
     HandleReset();
           };    
     return (
         <>
-        <Container style={{maxWidth:"300px"}}>
+        <Container style={{maxWidth:"300px"}} >
+            <p>Enter the following details for the card </p>
         <Form  ref={FormRef} validated={Validated} onSubmit={handleSubmit}>
             <Form.Group id="formName">
                 <Form.Label>Name</Form.Label>
@@ -84,7 +84,6 @@ const FormComponent = () => {
   
   ></IntlTelInput>
             {number.valid?<p style={{color:"green"}}>{number.friendlyMessage}</p>:<p style={{color:"red"}}>{number.friendlyMessage}</p>}
-            
             <Form.Group id="formDepartment">
                 <Form.Label>Department</Form.Label>
                 <Form.Control placeholder="Please enter department here" onChange={setDepartment} maxLength={20} minLength={3} type="text" required></Form.Control>

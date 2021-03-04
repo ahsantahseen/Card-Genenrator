@@ -28,7 +28,7 @@ const App = () => {
           
           <FormComponent></FormComponent>
           </Col>
-          <Col >
+          <Col>
           <CardLists></CardLists>
           </Col>
           </Row> 

@@ -1,12 +1,17 @@
-import React from 'react'
+import React,{useEffect,useContext} from 'react'
 import {Card,Button} from 'react-bootstrap'
 import {FaHome,FaUser,FaPhone,FaUniversity} from 'react-icons/fa'
 
 import {GiAges,FcDepartment} from 'react-icons/all'
-
+import {DataContext} from "../Contexts/DataContext"
 
 
 const CardComponent = (props) => {
+  const [Data]=useContext(DataContext);
+useEffect(() => {
+    console.log(Data)
+}, )
+
   return (
     <>
       <Card style={{maxWidth:"450px",border:"1px solid black"}} className="d-flex m-2">
