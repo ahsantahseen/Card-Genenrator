@@ -1,6 +1,6 @@
 
 import React,{useState,useContext,useRef} from 'react'
-import {Form,Button,Alert,Container} from 'react-bootstrap'
+import {Form,Button,Container} from 'react-bootstrap'
 import IntlTelInput from 'react-bootstrap-intl-tel-input'
 import {DataContext} from "../Contexts/DataContext"
 
@@ -18,7 +18,7 @@ const FormComponent = () => {
     const [department, setdepartment] = useState('')
     const [address,setaddress]=useState('')
     const [phoneInputReset, setphoneInputReset] = useState(false)
-
+    
    
     const setNumber=(data)=>{
         setnumber(data)

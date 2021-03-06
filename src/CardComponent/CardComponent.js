@@ -1,8 +1,8 @@
 import React,{useEffect,useContext} from 'react'
-import {Card,Button} from 'react-bootstrap'
+import {Card} from 'react-bootstrap'
 import {FaHome,FaUser,FaPhone,FaUniversity} from 'react-icons/fa'
 
-import {GiAges,FcDepartment} from 'react-icons/all'
+import {GiAges} from 'react-icons/all'
 import {DataContext} from "../Contexts/DataContext"
 
 

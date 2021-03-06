@@ -8,7 +8,8 @@ const CardLists = () => {
 const [Data,setData]=useContext(DataContext);
 useEffect(() => {
     console.log(Data)
-}, [])
+}, [Data])
+
 const deleteCard=(index)=>{
 let oldArray=[...Data]
 oldArray.splice(index,1)
