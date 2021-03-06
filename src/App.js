@@ -1,29 +1,23 @@
-import React, { useState,useContext} from "react";
+import React, {useContext} from "react";
 import "./App.css";
 import {Container,Row,Col,Navbar,Button} from 'react-bootstrap';
 import FormComponent from "./FormComponent/FormComponent"
 import {DataProvider} from "./Contexts/DataContext"
 import CardLists from "./CardComponent/CardLists"
-import {FaSave,FiTrash} from 'react-icons/all'
+import NavBar from "./FormComponent/NavBar"
+
 
 
 
 const App = () => {
 
+
+
   return (
     <DataProvider>
     <div>
       <Container fluid>
-        <Row style={{padding:"5px",backgroundColor:"#007BFF"}}><Col>
-          <Navbar inline="true" className="justify-content-between" expand="lg" style={{color:"white"}} >
-    <h3>Card Generator 1.1</h3>
-
-    <div style={{color:"white"}}>
-    <Button  variant="danger">Clear <FiTrash style={{verticalAlign:"middle"}}></FiTrash></Button> 
-    <Button className="m-2" variant="success">Save <FaSave style={{verticalAlign:"middle"}}></FaSave></Button> 
-    </div>
-
-</Navbar></Col></Row>
+        <NavBar></NavBar>
         <Row style={{padding:"5px"}} className="HeightFix" ><Col>
           
           <FormComponent></FormComponent>

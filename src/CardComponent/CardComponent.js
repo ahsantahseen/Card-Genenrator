@@ -14,7 +14,7 @@ useEffect(() => {
 
   return (
     <>
-      <Card style={{maxWidth:"450px",border:"1px solid black"}} className="d-flex m-2">
+      <Card style={{maxWidth:"450px",border:"1px solid black"}} className="d-flex m-2" onClick={props.click}>
         <Card.Body>
           <Card.Title>Student ID Card</Card.Title>
           <p><FaUser color="#3498db" style={{verticalAlign:"-2px"}}/><strong> Name: </strong>{props.name}</p>
